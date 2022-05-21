@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/programsListFragment">
+    <fragment
+        android:id="@+id/programsListFragment"
+        android:name="com.example.medicaleducation.feature_programs.presentation.main_screen.ProgramsListFragment"
+        android:label="Programs"
+        tools:layout="@layout/fragment_programs_list" >
+        <action
+            android:id="@+id/action_programsListFragment_to_viewPdfFragment"
+            app:destination="@id/viewPdfFragment" />
+        <action
+            android:id="@+id/action_programsListFragment_to_viewVideoFragment"
+            app:destination="@id/viewVideoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewPdfFragment"
+        android:name="com.example.medicaleducation.feature_programs.presentation.pdf_view.ViewPdfFragment"
+        android:label="fragment_view_pdf"
+        tools:layout="@layout/fragment_view_pdf" >
+        <action
+            android:id="@+id/action_viewPdfFragment_to_programsListFragment"
+            app:destination="@id/programsListFragment" />
+        <argument
+            android:name="url"
+            app:argType="string" />
+        <argument
+            android:name="fileName"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewVideoFragment"
+        android:name="com.example.medicaleducation.feature_programs.presentation.video_playback.ViewVideoFragment"
+        android:label="fragment_view_video"
+        tools:layout="@layout/fragment_view_video" >
+        <action
+            android:id="@+id/action_viewVideoFragment_to_programsListFragment"
+            app:destination="@id/programsListFragment" />
+        <argument
+            android:name="videoId"
+            app:argType="string" />
+    </fragment>
+</navigation>
