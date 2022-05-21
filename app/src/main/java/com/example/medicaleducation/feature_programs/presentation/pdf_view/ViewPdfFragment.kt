@@ -12,6 +12,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.webkit.WebViewClient
 import android.widget.Toast
+import android.widget.Toolbar
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import com.example.medicaleducation.R
@@ -39,6 +40,8 @@ class ViewPdfFragment : Fragment() {
         //Get Args Pass to ViewModel to download file
         val url = args.url
         val fileName = args.fileName
+
+        //TODO Set toolbar title
         viewModel.downloadPdf(requireContext(), url, fileName)
         observeViewModel()
         return view
