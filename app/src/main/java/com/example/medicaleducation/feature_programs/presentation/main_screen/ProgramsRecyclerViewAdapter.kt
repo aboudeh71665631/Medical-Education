@@ -1,5 +1,6 @@
 package com.example.medicaleducation.feature_programs.presentation.main_screen
 
+import android.annotation.SuppressLint
 import android.app.DownloadManager
 import android.content.BroadcastReceiver
 import android.content.Context
@@ -73,7 +74,7 @@ class ProgramsRecyclerViewAdapter :
                                         val url =
                                             programsList[holder.adapterPosition].media[position].url
                                         val fileName = url.substring(url.lastIndexOf("/") + 1)
-
+                                        val title = programsList[holder.adapterPosition].media[position].title
 
                                         //TODO Check if file exist open it, download if not
                                         //TODO Add Read Check
@@ -83,7 +84,8 @@ class ProgramsRecyclerViewAdapter :
                                         Navigation.findNavController(root).navigate(
                                             ProgramsListFragmentDirections.actionProgramsListFragmentToViewPdfFragment(
                                                 url,
-                                                fileName
+                                                fileName,
+                                                title
                                             )
                                         )
 
@@ -106,6 +108,7 @@ class ProgramsRecyclerViewAdapter :
         }
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     fun setData(programs: List<Program>) {
         this.programsList = programs
         notifyDataSetChanged()
