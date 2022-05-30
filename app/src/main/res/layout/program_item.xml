@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="300dp"
@@ -8,82 +7,81 @@
     android:layout_margin="10dp"
     android:layout_marginEnd="5dp"
     android:background="@drawable/background_border"
+    android:orientation="vertical"
     app:cardCornerRadius="20dp">
+
+
+    <LinearLayout
+        android:id="@+id/info_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <ImageView
+            android:id="@+id/article_image"
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:contentDescription="@string/program_item_thumbnail"
+            android:padding="5dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/article_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="?attr/colorOnPrimary"
+                android:textSize="18sp"
+                android:textStyle="bold|italic"
+                tools:text="Article Title" />
+
+            <TextView
+                android:id="@+id/article_subtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:textSize="16sp"
+                tools:text="Article Sub-Title" />
+
+            <TextView
+                android:id="@+id/read_duration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:textSize="16sp"
+                tools:text="Read Time" />
+        </LinearLayout>
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="horizontal">
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <ImageView
+            android:id="@+id/favorite_button"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="5dp">
+            android:contentDescription="@string/favorite_icon"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:padding="10dp"
+            android:src="@drawable/ic_favorite" />
 
-            <ImageView
-                android:id="@+id/article_image"
-                android:layout_width="80dp"
-                android:layout_height="100dp"
-                android:padding="5dp"
-                android:layout_gravity="center" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/article_title"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="?attr/colorOnPrimary"
-                    android:textSize="18sp"
-                    android:textStyle="bold|italic"
-                    tools:text="Article Title" />
-
-                <TextView
-                    android:id="@+id/article_subtitle"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-
-                    android:textSize="16sp"
-                    android:maxLines="1"
-                    android:text="Article Sub-Title" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom"
-
-                    android:textSize="16sp"
-                    android:text="2m" />
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
+        <View
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:id="@+id/favorite_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:src="@drawable/ic_favorite"
-                android:foreground="?android:attr/selectableItemBackground"/>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/background_border"
-                android:backgroundTint="@color/teal_700"
-                android:layout_margin="10dp"/>
-
-        </LinearLayout>
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:background="@drawable/background_border"
+            android:backgroundTint="@color/teal_700" />
 
     </LinearLayout>
+
 
 </LinearLayout>
